@@ -1,0 +1,2 @@
+SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@db:3306/College'
+SQLALCHEMY_TRACK_MODIFICATIONS = False

@@ -1,0 +1,28 @@
+version: "3"
+services:
+  app:
+    build: ./app
+
+    ports:
+      - "5000:5000"
+    entrypoint: ["python","run.py"]
+
+    links:
+      - db
+
+    volumes:
+      - ${COLLEGE_PROJECT_DIR}:/home/
+
+
+  db:
+    image: mariadb:latest
+    ports:
+      - "3306:3306"
+    environment:
+
+      MARIADB_USER : sahana
+      MARIADB_ROOT_PASSWORD: root
+      MARIADB_PASSWORD: root
+    volumes:
+      - /var/run/mysql/:/var/run/mysql/
+      - ${COLLEGE_PROJECT_DATA}:/var/lib/mysql
