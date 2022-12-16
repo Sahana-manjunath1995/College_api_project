@@ -1,0 +1,100 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "College-Information",
+    "version": "1.0.0",
+    "title": "College API",
+    "contact": {
+      "email": "sahana95man@gmail.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "College",
+      "description": "Example API for requesting and return book requests"
+    }
+  ],
+  "paths": {
+    "/personal-info/": {
+      "get": {
+        "tags": [
+          "Student-information"
+        ],
+        "summary": "Returns student's information",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/components/schemas/Student"
+            }
+          }
+        }
+      }
+    },
+    "/personal-info/{student_id}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "student_id",
+            "in": "path",
+            "description": "student information",
+            "schema": {
+              "type": "string",
+              "nullable": true
+
+            }
+          }
+        ],
+        "tags": [
+          "Student-information"
+        ],
+        "summary": "Returns individual student information",
+        "responses": {
+          "200": null,
+          "description": "OK",
+          "schema": {
+            "$ref": "#/components/schemas/Student"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Student": {
+        "type": "object",
+        "properties": {
+          "student_id": {
+            "type": "string",
+            "format": "string"
+          },
+          "name": {
+            "type": "string",
+            "format": "string"
+          },
+          "course_id": {
+            "type": "integer",
+            "format": "integer"
+          },
+          "course_name": {
+            "type": "string",
+            "format": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "contact_number": {
+            "type": "string",
+            "format": "number"
+          }
+        }
+      }
+    }
+  }
+}

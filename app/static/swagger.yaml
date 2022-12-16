@@ -1,0 +1,586 @@
+openapi: 3.0.3
+info:
+  description: College-Information
+  version: 1.0.11
+  title: College API
+  contact:
+    email: sahana95man@gmail.com
+servers:
+- url: "http://127.0.0.1:5000"
+tags:
+- name: College
+  description: College API for requesting information on students, teacher and library
+
+paths:
+  "/personal-info/":
+    get:
+      operationId: getSahana
+      tags:
+      - Student-information
+      summary: Returns student's information
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+
+  "/personal-info/{student_id}":
+      get:
+        tags:
+            - Student-information
+        summary: Returns individual student information
+        description: Returns single student information
+        parameters:
+          - name: student_id
+            in: path
+            description: student information
+            schema:
+              type: string
+        responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: object
+
+  "/attendance-info/":
+    get:
+      tags:
+      - Student-information
+      summary: Returns student's attendance information
+      responses:
+        '200':
+          description: OK
+          content:
+              application/json:
+                schema:
+                  type: object
+
+  "/attendance-info/{student_id}":
+      get:
+        tags:
+          - Student-information
+        summary: Returns individual student attendance
+        description: Returns single student attendance information
+        parameters:
+          - name: student_id
+            in: path
+            description: attendance information
+            schema:
+              type: string
+        responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: object
+
+  "/individual-sub-info/{sub_id}/":
+    get:
+      tags:
+        - Student-information
+      summary: Returns individual subject attendance
+      description: Returns individual subject attendance information
+      parameters:
+        - name: sub_id
+          in: path
+          description: subject attendance information
+          schema:
+            type: integer
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/marks/":
+    get:
+      tags:
+      - Student-information
+      summary: Returns student's marks information
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/marks/{student_id}/":
+    get:
+      tags:
+          - Student-information
+      summary: Returns individual student marks
+      description: Returns single student marks information
+      parameters:
+        - name: student_id
+          in: path
+          description: Marks information
+          schema:
+            type: string
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/student-totalscore":
+     get:
+      tags:
+      - Student-information
+      summary: Returns student's total score information
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/student-greater-avg":
+     get:
+      tags:
+      - Student-information
+      summary: Returns student's having marks greater than average
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+
+  "/student-lower-avg":
+    get:
+      tags:
+      - Student-information
+      summary: Returns student's having marks lower than average
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/student-marks-status":
+    get:
+      tags:
+      - Student-information
+      summary: Returns student's pass or fail status
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/student-subject-status":
+    get:
+      tags:
+      - Student-information
+      summary: Returns student's pass or fail status for all subjects
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+
+  "/student-pass-status":
+    get:
+      tags:
+      - Student-information
+      summary: Returns only student's pass status in all subjects
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+  "/student-fail-status":
+    get:
+      tags:
+      - Student-information
+      summary: Returns only student's fail status in all subjects
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/student-low-percent":
+    get:
+      tags:
+      - Student-information
+      summary: Returns only student with lowest percentage
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/student-high-percent":
+    get:
+      tags:
+      - Student-information
+      summary: Returns only student with highest percentage
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/student-bsc-highscore":
+    get:
+      tags:
+      - Student-information
+      summary: Returns student with highest score in B.Sc batch.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/student-bcm-highscore":
+    get:
+      tags:
+      - Student-information
+      summary: Returns student with highest score in B.Com batch.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/book-info/":
+    get:
+      tags:
+      - Book-information
+      summary: Returns book information.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/book-info/{title}":
+    get:
+      tags:
+      - Book-information
+      summary: Returns book information based on title search.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/borrow-info":
+    get:
+      tags:
+      - Book-information
+      summary: Returns book's borrow information.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/borrow-info/{student_id}":
+    get:
+      tags:
+      - Book-information
+      summary: Returns individual book borrow information.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/book-count":
+    get:
+      tags:
+      - Book-information
+      summary: Returns the number of books taken by individual student.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+
+
+  "/over-due-fine":
+    get:
+      tags:
+      - Book-information
+      summary: Returns fine to be paid information.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/book-status":
+    get:
+      tags:
+      - Book-information
+      summary: Returns book availability information.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/teacher-info":
+    get:
+      tags:
+      - Teacher-information
+      summary: Returns teacher information.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/teacher-attendance-info":
+    get:
+      tags:
+      - Teacher-information
+      summary: Returns teacher attendance information.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/teacher-salary-info":
+    get:
+      tags:
+      - Teacher-information
+      summary: Returns teacher salary information.
+      responses:
+          '200':
+            description: OK
+            content:
+              application/json:
+                schema:
+                  type: object
+
+  "/teacher-subjects-info":
+      get:
+        tags:
+        - Teacher-information
+        summary: Returns subjects taken by teacher.
+        responses:
+            '200':
+              description: OK
+              content:
+                application/json:
+                  schema:
+                    type: object
+
+components:
+  schemas:
+    Student:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        name:
+          type: string
+          format: string
+        course_id:
+          type: integer
+          format: integer
+        course_name:
+          type: string
+          format: string
+        email:
+          type: string
+          format: email
+        contact_number:
+          type: string
+          format: number
+    Attendance:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        class_id:
+          type: string
+          format: string
+        status:
+          type: string
+          format: string
+    Indvdl_attendance:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        subject_name:
+          type: string
+          format: string
+        totalclasses:
+          type: integer
+          format: number
+        attended:
+          type: string
+          format: number
+        percentage:
+          type: string
+          format: number
+    individual-sub-info:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        subject_name:
+          type: string
+          format: string
+        percentage:
+          type: string
+          format: number
+    Marks:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        sub_code:
+          type: string
+          format: string
+        subject_name:
+          type: string
+          format: string
+        marks:
+          type: integer
+    Total-score:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        totalmarks:
+          type: string
+          format: number
+        average:
+          type: string
+          format: number
+    Marks-status:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        name:
+          type: string
+          format: string
+        total_marks:
+          type: string
+          format: number
+        percentage:
+          type: string
+          format: number
+        marks_case:
+          type: string
+          format: string
+    Individual-subject:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        name:
+          type: string
+          format: string
+        subject_name:
+          type: string
+          format: string
+        marks:
+          type: integer
+        result:
+          type: string
+          format: string
+    Pass-fail-status:
+      type: object
+      properties:
+        student_id:
+          type: string
+          format: string
+        subject_name:
+          type: string
+          format: string
+        marks:
+          type: integer
+        result:
+          type: string
+          format: string
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

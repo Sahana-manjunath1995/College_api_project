@@ -1,0 +1,4 @@
+Flask
+pymysql
+flask_sqlalchemy
+flask_swagger_ui
