@@ -1,6 +1,6 @@
 ## COLLEGE DATABASE WITH API
 
-   This will be demo of a website with possibility of retrieving information regarding students, teachers and library
+   This project aims at creating website for retrieving information regarding students, teachers and library.
 
 
 
@@ -143,7 +143,7 @@ $ pip install -U Flask-SQLAlchemy
       - refer : ./app
 
    3. Create docker-compose.yml file in application root directory.
-      - refer : .
+      - refer : application root directory
 
    4. Command for building containers
 ```bash 
