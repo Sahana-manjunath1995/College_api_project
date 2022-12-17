@@ -62,19 +62,19 @@ $ docker --version
 
   1. Connecting localhost to container in docker using TCP method
 ```bash 
-mysql --host=localhost --protocol=TCP -uroot -proot
+$ mysql --host=localhost --protocol=TCP -uroot -proot
 ```
                   or
                   
   2. Start the container and run the following commands
 ```bash 
-docker start contaner_name
+$ docker start contaner_name
 ```
 ```bash 
 docker exec -it contaner_name bash
 ```
 ```bash 
-mysql -uroot -proot
+$ mysql -uroot -proot
 ```
 
   3. After login create database named 'College' and insert data into table based on relationship given in data model
@@ -117,10 +117,10 @@ mysql -uroot -proot
 
 ## Installation
 ```bash 
-   - pip install -U Flask
+$ pip install -U Flask
 ```
 ```bash
-   - pip install -U Flask-SQLAlchemy
+$ pip install -U Flask-SQLAlchemy
 ```
 
 
@@ -237,7 +237,7 @@ Example:
 
 ### How to copy the Database Dump to the Destination Server?
 ```bash 
-docker cp student_data 952803436d01:/var/data/mysql
+$ docker cp student_data 952803436d01:/var/data/mysql
 ```
 
 
