@@ -64,17 +64,17 @@ This module requires the following modules:
 ## Installation in Ubuntu-wsl
 
 1. Check if the system is up-to-date using the following command:
-$ sudo apt-get update
+   $ sudo apt-get update
 
 2. Install Docker using the following command:
-$ sudo apt install docker.io
+   $ sudo apt install docker.io
 You’ll then get a prompt asking you to choose between y/n - choose y
 
 3. Install all the dependency packages using the following command:
-$ sudo snap install docker
+   $ sudo snap install docker
 
 4. Before testing Docker, check the version installed using the following command:
-$ docker --version
+   $ docker --version
 
 ## Deploy application using Docker:
 
@@ -108,34 +108,34 @@ $ docker --version
 
 5. Add some Swagger specific blueprint code after you instantiate Flask
 
-app = Flask(__name__)
+   app = Flask(__name__)
 
-### swagger specific ###
-SWAGGER_URL = '/swagger'
-API_URL = '/static/swagger.json'
-SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
-    SWAGGER_URL,
-    API_URL,
-    config={
-        'app_name': "Seans-Python-Flask-REST-Boilerplate"
-    }
-)
-app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
+   ### swagger specific ###
+   SWAGGER_URL = '/swagger'
+   API_URL = '/static/swagger.json'
+   SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
+       SWAGGER_URL,
+       API_URL,
+       config={
+           'app_name': "Seans-Python-Flask-REST-Boilerplate"
+       }
+   )
+   app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
     
 6. Add the minimum yml to the swagger.yml file 
-  Example:
-   openapi: 3.0.3
-  info:
-    description: College-Information
-    version: 1.0.11
-    title: College API
-    contact:
-      email: sahana95man@gmail.com
-  servers:
-  - url: "http://127.0.0.1:5000"
-  tags:
-  - name: College
-    description: College API for requesting information on students, teacher and library
+     Example:
+      openapi: 3.0.3
+     info:
+       description: College-Information
+       version: 1.0.11
+       title: College API
+       contact:
+         email: sahana95man@gmail.com
+     servers:
+     - url: "http://127.0.0.1:5000"
+     tags:
+     - name: College
+       description: College API for requesting information on students, teacher and library
     
 7. Describe the paths, and specify the request method in swagger.yml
    Example:
@@ -156,14 +156,15 @@ app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
                  
 8. Run the application file (run.py)
 
-![collegedb](https://user-images.githubusercontent.com/115713117/208236786-f13cfe0d-7d2d-4755-9399-1918ac5d7372.PNG)
+   ![collegedb](https://user-images.githubusercontent.com/115713117/208236786-f13cfe0d-7d2d-4755-9399-1918ac5d7372.PNG)
 
 9. Click on GET > try it out > execute
 
+   ![request](https://user-images.githubusercontent.com/115713117/208237350-433d6f23-b899-4296-a633-5dd9a0ca3aec.PNG)
 
 
     
-    
+## Extra information
 
 ### How to copy the Database Dump to the Destination Server?
 docker cp student_data 952803436d01:/var/data/mysql
