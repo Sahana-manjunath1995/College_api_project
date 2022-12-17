@@ -35,13 +35,15 @@ This will be demo of a website with possibility of retrieving information regard
    4. Before testing Docker, check the version installed using the following command:
       $ docker --version
       
+      
 ## Docker command to create and run the container
  
     1. docker pull mariadb:latest
       
     2. docker run -d -p 3360:3360 --network mysql-network  -v var/lib/mysql/data:var/lib/mysql/data --name mysqldb --env MARIADB_USER=sahana --env
        MARIADB_PASSWORD=root --env MARIADB_ROOT_PASSWORD=root  mariadb:latest
-       
+  
+  
 ## Login to mysql
 
   1. Connecting localhost to container in docker using TCP method
@@ -88,10 +90,12 @@ This module requires the following modules:
 - from flask_sqlalchemy import SQLAlchemy
 - from flask_swagger_ui import get_swaggerui_blueprint
 
+
 ## Installation
 
 - pip install -U Flask
 - pip install -U Flask-SQLAlchemy
+
 
 ## Configuration
 
@@ -119,6 +123,7 @@ This module requires the following modules:
 
 6. Connection between containers is done using docker-compose.yml
 
+
 ## API documentation using swagger
 
 1. Open console
@@ -135,7 +140,6 @@ This module requires the following modules:
 
    app = Flask(__name__)
 
-   ### swagger specific ###
    SWAGGER_URL = '/swagger'
    API_URL = '/static/swagger.json'
    SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
@@ -188,7 +192,6 @@ This module requires the following modules:
    ![request](https://user-images.githubusercontent.com/115713117/208237350-433d6f23-b899-4296-a633-5dd9a0ca3aec.PNG)
 
 
-    
 ## Extra information
 
 ### How to copy the Database Dump to the Destination Server?
