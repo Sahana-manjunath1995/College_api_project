@@ -25,21 +25,25 @@
 ## Installation of docker in Ubuntu-wsl
 
    1. Check if the system is up-to-date using the following command:
+  
 ```bash
 $ sudo apt-get update
 '''
 
    2. Install Docker using the following command:
+   
 ```bash   
 $ sudo apt install docker.io
 '''
 
    3. Install all the dependency packages using the following command:
+   
 ```bash 
 $ sudo snap install docker
 ```
 
    4. Before testing Docker, check the version installed using the following command:
+
 ```bash 
 $ docker --version
 ```
