@@ -129,7 +129,7 @@
 
    4. Command for building containers
 
-      `docker compose up -d --build`
+      `docker compose up -d --build #ffffff`
 
    5. Container is created by using Dockerfile
 
