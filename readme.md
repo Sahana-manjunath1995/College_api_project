@@ -67,13 +67,13 @@ mysql --host=localhost --protocol=TCP -uroot -proot
 
   2. Start the container and run the following commands
 ```bash 
-     docker start contaner_name
+docker start contaner_name
 ```
 
      docker exec -it contaner_name bash
 ```bash 
-     mysql -uroot -proot
- ```
+mysql -uroot -proot
+```
 
   3. After login create database named 'College' and insert data into table based on relationship given in data model
 
@@ -158,12 +158,12 @@ docker compose up -d --build
 
    1. Open console
 ```bash 
-      pip install flask_swagger_ui
+pip install flask_swagger_ui
 ```
 
    2. Open the app folder where Flask app is instantiated and add to the top
 ```bash 
-      from flask_swagger_ui import get_swaggerui_blueprint
+from flask_swagger_ui import get_swaggerui_blueprint
 ```
 
    3. Add a folder to the application root directory and name it static.
@@ -172,53 +172,53 @@ docker compose up -d --build
 
    5. Add some Swagger specific blueprint code after you instantiate Flask
 ```bash 
-      app = Flask(__name__)
+app = Flask(__name__)
 
-      SWAGGER_URL = '/swagger'
-      API_URL = '/static/swagger.json'
-      SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
-         SWAGGER_URL,
-         API_URL,
-         config={
-            'app_name': "Seans-Python-Flask-REST-Boilerplate"
-         }
-      )
-      app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
+SWAGGER_URL = '/swagger'
+API_URL = '/static/swagger.json'
+SWAGGERUI_BLUEPRINT = get_swaggerui_blueprint(
+   SWAGGER_URL,
+   API_URL,
+   config={
+      'app_name': "Seans-Python-Flask-REST-Boilerplate"
+   }
+)
+app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
 ```
 
 6. Add the minimum yml to the swagger.yml file
 ```bash 
-     Example:
-      openapi: 3.0.3
-     info:
-       description: College-Information
-       version: 1.0.11
-       title: College API
-       contact:
-         email: sahana95man@gmail.com
-     servers:
-     - url: "http://127.0.0.1:5000"
-     tags:
-     - name: College
-       description: College API for requesting information on students, teacher and library
+Example:
+openapi: 3.0.3
+info:
+ description: College-Information
+ version: 1.0.11
+ title: College API
+ contact:
+   email: sahana95man@gmail.com
+servers:
+- url: "http://127.0.0.1:5000"
+tags:
+- name: College
+ description: College API for requesting information on students, teacher and library
 ```
 7. Describe the paths, and specify the request method in swagger.yml
 ```bash 
-   Example:
-    paths:
-   "/personal-info/":
-     get:
-       operationId: getSahana
-       tags:
-       - Student-information
-       summary: Returns student's information
-       responses:
-         '200':
-           description: OK
-           content:
-             application/json:
-               schema:
-                 type: object
+Example:
+ paths:
+"/personal-info/":
+  get:
+    operationId: getSahana
+    tags:
+    - Student-information
+    summary: Returns student's information
+    responses:
+      '200':
+        description: OK
+        content:
+          application/json:
+            schema:
+              type: object
 ```
 
 8. Run the application file (run.py)
