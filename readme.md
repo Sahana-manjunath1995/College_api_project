@@ -76,25 +76,25 @@
 
 ## Folder structure for the project
 
-   .
-   ├── app
-   │   ├── Dockerfile
-   │   ├── __init__.py
-   │   ├── database
-   │   │   ├── controllers.py
-   │   │   └── models.py
-   │   ├── requirements.txt
-   │   ├── static
-   │   │   ├── swagger.json
-   │   │   └── swagger.yaml
-   │   ├── templates
-   │   │   └── 404.html
-   │   └── views
-   │       └── controllers.py
-   ├── config.py
-   ├── docker-compose.yml
-   ├── readme.md
-   └── run.py
+      .
+      ├── app
+      │   ├── Dockerfile
+      │   ├── __init__.py
+      │   ├── database
+      │   │   ├── controllers.py
+      │   │   └── models.py
+      │   ├── requirements.txt
+      │   ├── static
+      │   │   ├── swagger.json
+      │   │   └── swagger.yaml
+      │   ├── templates
+      │   │   └── 404.html
+      │   └── views
+      │       └── controllers.py
+      ├── config.py
+      ├── docker-compose.yml
+      ├── readme.md
+      └── run.py
 
 
 
