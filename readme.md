@@ -34,7 +34,7 @@ $ sudo apt-get update
 $ sudo apt install docker.io
 '''
 
-      You’ll then get a prompt asking you to choose between y/n - choose y
+   You’ll then get a prompt asking you to choose between y/n - choose y
 
    3. Install all the dependency packages using the following command:
 ```bash 
@@ -68,8 +68,9 @@ mysql --host=localhost --protocol=TCP -uroot -proot
 ```bash 
 docker start contaner_name
 ```
-
-     docker exec -it contaner_name bash
+```bash 
+docker exec -it contaner_name bash
+```
 ```bash 
 mysql -uroot -proot
 ```
