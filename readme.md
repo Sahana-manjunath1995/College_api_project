@@ -1,4 +1,5 @@
 COLLEGE DATABASE WITH API
+
 This will be demo of a website with possibility of retrieving information regarding students, teachers and library
 
 ## Folder structure
