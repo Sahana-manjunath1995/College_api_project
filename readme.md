@@ -49,7 +49,7 @@ This will be demo of a website with possibility of retrieving information regard
      
      or
      
-  2. Start the container and run the following commands.
+  2. Start the container and run the following commands
      docker start contaner_name
      docker exec -it contaner_name bash
      mysql -uroot -proot
