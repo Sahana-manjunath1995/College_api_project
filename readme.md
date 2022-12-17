@@ -34,8 +34,6 @@ $ sudo apt-get update
 $ sudo apt install docker.io
 '''
 
-   You’ll then get a prompt asking you to choose between y/n - choose y
-
    3. Install all the dependency packages using the following command:
 ```bash 
 $ sudo snap install docker
