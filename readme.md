@@ -29,13 +29,17 @@
       $ sudo apt-get update
 
    2. Install Docker using the following command:
+
       $ sudo apt install docker.io
+
       You’ll then get a prompt asking you to choose between y/n - choose y
 
    3. Install all the dependency packages using the following command:
+
       $ sudo snap install docker
 
    4. Before testing Docker, check the version installed using the following command:
+
       $ docker --version
 
 
@@ -53,13 +57,17 @@
 ## Login to mysql
 
   1. Connecting localhost to container in docker using TCP method
+
      mysql --host=localhost --protocol=TCP -uroot -proot
 
      or
 
   2. Start the container and run the following commands
+
      docker start contaner_name
+
      docker exec -it contaner_name bash
+
      mysql -uroot -proot
 
   3. After login create database named 'College' and insert data into table based on relationship given in data model
@@ -103,6 +111,7 @@
 ## Installation
 
    - pip install -U Flask
+
    - pip install -U Flask-SQLAlchemy
 
 
@@ -129,9 +138,7 @@
 
    4. Command for building containers
 
-      ```
-       docker compose up -d --build
-      ```
+      docker compose up -d --build
 
    5. Container is created by using Dockerfile
 
@@ -142,9 +149,11 @@
 ## API documentation using swagger
 
    1. Open console
+
       pip install flask_swagger_ui
 
    2. Open the app folder where Flask app is instantiated and add to the top
+
       from flask_swagger_ui import get_swaggerui_blueprint
 
    3. Add a folder to the application root directory and name it static.
