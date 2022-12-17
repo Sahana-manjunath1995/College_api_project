@@ -3,13 +3,15 @@
 This will be demo of a website with possibility of retrieving information regarding students, teachers and library
 
 
+
 ## Data model - Schema design for database
 
    - Create schema design, before creating database in Mysql
    
       ![dbmodel](https://user-images.githubusercontent.com/115713117/208238709-cd6ed3bc-3d62-45e2-ae75-7cc3f07f98bf.PNG)
       
-      
+ 
+ 
 ## Requirements
 
    - Docker
@@ -35,13 +37,15 @@ This will be demo of a website with possibility of retrieving information regard
    4. Before testing Docker, check the version installed using the following command:
       $ docker --version
       
-      
+     
+     
 ## Docker command to create and run the container
  
     1. docker pull mariadb:latest
       
     2. docker run -d -p 3360:3360 --network mysql-network  -v var/lib/mysql/data:var/lib/mysql/data --name mysqldb --env MARIADB_USER=sahana --env
        MARIADB_PASSWORD=root --env MARIADB_ROOT_PASSWORD=root  mariadb:latest
+  
   
   
 ## Login to mysql
@@ -58,6 +62,7 @@ This will be demo of a website with possibility of retrieving information regard
      
   3. After login create database named 'College' and insert data into table based on relationship given in data model
   
+
 
 ## Folder structure for the project
 
@@ -82,6 +87,7 @@ This will be demo of a website with possibility of retrieving information regard
 └── run.py
 
 
+
 ## Module Requirements
 
 This module requires the following modules:
@@ -91,10 +97,12 @@ This module requires the following modules:
 - from flask_swagger_ui import get_swaggerui_blueprint
 
 
+
 ## Installation
 
 - pip install -U Flask
 - pip install -U Flask-SQLAlchemy
+
 
 
 ## Configuration
@@ -103,6 +111,7 @@ This module requires the following modules:
 
 1. SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@db:3306/College'
 2. SQLALCHEMY_TRACK_MODIFICATIONS = False
+
 
 
 ## Containerizing the flask application
@@ -122,6 +131,7 @@ This module requires the following modules:
 5. Container is created by using Dockerfile
 
 6. Connection between containers is done using docker-compose.yml
+
 
 
 ## API documentation using swagger
@@ -190,6 +200,7 @@ This module requires the following modules:
 9. Click on GET > try it out > execute
 
    ![request](https://user-images.githubusercontent.com/115713117/208237350-433d6f23-b899-4296-a633-5dd9a0ca3aec.PNG)
+
 
 
 ## Extra information
