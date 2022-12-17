@@ -3,21 +3,67 @@
 This will be demo of a website with possibility of retrieving information regarding students, teachers and library
 
 
-## Database model
+## Data model - Schema design for database
 
-## Folder structure
+   - Create schema design, before creating database in Mysql
+   
+      ![dbmodel](https://user-images.githubusercontent.com/115713117/208238709-cd6ed3bc-3d62-45e2-ae75-7cc3f07f98bf.PNG)
+      
+      
+## Requirements
+
+   - Docker
+      1. mariadb:latest image
+   - Flask
+   - flask_sqlalchemy
+   - flask_swagger_ui
+    
+  
+
+## Installation of docker in Ubuntu-wsl
+
+   1. Check if the system is up-to-date using the following command:
+      $ sudo apt-get update
+
+   2. Install Docker using the following command:
+      $ sudo apt install docker.io
+      You’ll then get a prompt asking you to choose between y/n - choose y
+
+   3. Install all the dependency packages using the following command:
+      $ sudo snap install docker
+
+   4. Before testing Docker, check the version installed using the following command:
+      $ docker --version
+      
+## Docker command to create and run the container
+ 
+    1. docker pull mariadb:latest
+      
+    2. docker run -d -p 3360:3360 --network mysql-network  -v var/lib/mysql/data:var/lib/mysql/data --name mysqldb --env MARIADB_USER=sahana --env
+       MARIADB_PASSWORD=root --env MARIADB_ROOT_PASSWORD=root  mariadb:latest
+       
+## Login to mysql
+
+  1. Connecting localhost to container in docker using TCP method
+     mysql --host=localhost --protocol=TCP -uroot -proot
+     
+     or
+     
+  2. Start the container and run the following commands.
+     docker start contaner_name
+     docker exec -it contaner_name bash
+     mysql -uroot -proot
+     
+  3. After login create database named 'College' and insert data into table based on relationship given in data model
+  
+
+## Folder structure for the project
 
 .
 ├── app
 │   ├── Dockerfile
 │   ├── __init__.py
-│   ├── __pycache__
-│   │   ├── __init__.cpython-38.pyc
-│   │   └── config.cpython-38.pyc
 │   ├── database
-│   │   ├── __pycache__
-│   │   │   ├── controllers.cpython-38.pyc
-│   │   │   └── models.cpython-38.pyc
 │   │   ├── controllers.py
 │   │   └── models.py
 │   ├── requirements.txt
@@ -27,8 +73,6 @@ This will be demo of a website with possibility of retrieving information regard
 │   ├── templates
 │   │   └── 404.html
 │   └── views
-│       ├── __pycache__
-│       │   └── controllers.cpython-38.pyc
 │       └── controllers.py
 ├── config.py
 ├── docker-compose.yml
@@ -36,7 +80,7 @@ This will be demo of a website with possibility of retrieving information regard
 └── run.py
 
 
-## Requirements
+## Module Requirements
 
 This module requires the following modules:
 
@@ -47,7 +91,6 @@ This module requires the following modules:
 ## Installation
 
 - pip install -U Flask
-- pip install flask-sqlalchemy
 - pip install -U Flask-SQLAlchemy
 
 ## Configuration
@@ -58,28 +101,7 @@ This module requires the following modules:
 2. SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-## Containerizing flask app
-
-## Requirements
-
-- Docker
-
-## Installation in Ubuntu-wsl
-
-1. Check if the system is up-to-date using the following command:
-   $ sudo apt-get update
-
-2. Install Docker using the following command:
-   $ sudo apt install docker.io
-You’ll then get a prompt asking you to choose between y/n - choose y
-
-3. Install all the dependency packages using the following command:
-   $ sudo snap install docker
-
-4. Before testing Docker, check the version installed using the following command:
-   $ docker --version
-
-## Deploy application using Docker:
+## Containerizing the flask application
 
 1. Create Dockerfile in app folder
    - refer : ./app
@@ -102,7 +124,7 @@ You’ll then get a prompt asking you to choose between y/n - choose y
 1. Open console
     pip install flask_swagger_ui
     
-2. Open your app folder where you instantiated Flask and add to the top
+2. Open the app folder where Flask app is instantiated and add to the top
     from flask_swagger_ui import get_swaggerui_blueprint
     
 3. Add a folder to the application root directory and name it static.
@@ -176,6 +198,4 @@ docker cp student_data 952803436d01:/var/data/mysql
 ### How to restore the dump?
  mysql -uroot -proot College < student_data
 
-### How to run docker mysql container with TCP ?
-Expose port at 3306 with docker run command
-mysql --host=localhost --protocol=TCP -uroot -proot
+
