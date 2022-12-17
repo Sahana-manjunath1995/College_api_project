@@ -26,21 +26,21 @@
 
    1. Check if the system is up-to-date using the following command:
       
-      $ sudo apt-get update
+         $ sudo apt-get update
 
    2. Install Docker using the following command:
    
-      $ sudo apt install docker.io
+         $ sudo apt install docker.io
 
       You’ll then get a prompt asking you to choose between y/n - choose y
 
    3. Install all the dependency packages using the following command:
 
-      $ sudo snap install docker
+         $ sudo snap install docker
 
    4. Before testing Docker, check the version installed using the following command:
 
-      $ docker --version
+         $ docker --version
 
 
 
