@@ -62,9 +62,8 @@ $ docker --version
 ```bash 
 mysql --host=localhost --protocol=TCP -uroot -proot
 ```
-
-     or
-
+                  or
+                  
   2. Start the container and run the following commands
 ```bash 
 docker start contaner_name
