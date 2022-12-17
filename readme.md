@@ -25,8 +25,7 @@
 ## Installation of docker in Ubuntu-wsl
 
    1. Check if the system is up-to-date using the following command:
-      
-         $ sudo apt-get update
+      $ sudo apt-get update
 
    2. Install Docker using the following command:
    
