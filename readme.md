@@ -153,6 +153,11 @@ app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
              application/json:
                schema:
                  type: object
+                 
+8. Run the application file (run.py)
+
+![collegedb](https://user-images.githubusercontent.com/115713117/208236786-f13cfe0d-7d2d-4755-9399-1918ac5d7372.PNG)
+
     
     
 
