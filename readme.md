@@ -25,26 +25,26 @@
 ## Installation of docker in Ubuntu-wsl
 
    1. Check if the system is up-to-date using the following command:
-     ```bash
-     $ sudo apt-get update
-     '''
+```bash
+$ sudo apt-get update
+'''
 
    2. Install Docker using the following command:
-   
-   
-         $ sudo apt install docker.io
+```bash   
+$ sudo apt install docker.io
+'''
 
       You’ll then get a prompt asking you to choose between y/n - choose y
 
    3. Install all the dependency packages using the following command:
-
-         $ sudo snap install docker
+```bash 
+$ sudo snap install docker
+```
 
    4. Before testing Docker, check the version installed using the following command:
-
-         $ docker --version
-
-
+```bash 
+$ docker --version
+```
 
 ## Docker command to create and run the container
 
@@ -59,18 +59,21 @@
 ## Login to mysql
 
   1. Connecting localhost to container in docker using TCP method
-
-     mysql --host=localhost --protocol=TCP -uroot -proot
+```bash 
+mysql --host=localhost --protocol=TCP -uroot -proot
+```
 
      or
 
   2. Start the container and run the following commands
-
+```bash 
      docker start contaner_name
+```
 
      docker exec -it contaner_name bash
-
+```bash 
      mysql -uroot -proot
+ ```
 
   3. After login create database named 'College' and insert data into table based on relationship given in data model
 
@@ -111,10 +114,12 @@
 
 
 ## Installation
-
+```bash 
    - pip install -U Flask
-
+```
+```bash
    - pip install -U Flask-SQLAlchemy
+```
 
 
 
@@ -139,8 +144,9 @@
       - refer : .
 
    4. Command for building containers
-
-      docker compose up -d --build
+```bash 
+docker compose up -d --build
+```
 
    5. Container is created by using Dockerfile
 
@@ -151,19 +157,21 @@
 ## API documentation using swagger
 
    1. Open console
-
+```bash 
       pip install flask_swagger_ui
+```
 
    2. Open the app folder where Flask app is instantiated and add to the top
-
+```bash 
       from flask_swagger_ui import get_swaggerui_blueprint
+```
 
    3. Add a folder to the application root directory and name it static.
 
    4. Create a new file in it and name it swagger.yml
 
    5. Add some Swagger specific blueprint code after you instantiate Flask
-
+```bash 
       app = Flask(__name__)
 
       SWAGGER_URL = '/swagger'
@@ -176,8 +184,10 @@
          }
       )
       app.register_blueprint(SWAGGERUI_BLUEPRINT, url_prefix=SWAGGER_URL)
+```
 
 6. Add the minimum yml to the swagger.yml file
+```bash 
      Example:
       openapi: 3.0.3
      info:
@@ -191,8 +201,9 @@
      tags:
      - name: College
        description: College API for requesting information on students, teacher and library
-
+```
 7. Describe the paths, and specify the request method in swagger.yml
+```bash 
    Example:
     paths:
    "/personal-info/":
@@ -208,6 +219,7 @@
              application/json:
                schema:
                  type: object
+```
 
 8. Run the application file (run.py)
 
@@ -222,10 +234,14 @@
 ## Extra information
 
 ### How to copy the Database Dump to the Destination Server?
+```bash 
 docker cp student_data 952803436d01:/var/data/mysql
+```
 
 
 ### How to restore the dump?
+```bash 
  mysql -uroot -proot College < student_data
+ ```
 
 
