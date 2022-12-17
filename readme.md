@@ -28,13 +28,13 @@
   
 ```bash
 $ sudo apt-get update
-'''
+```
 
    2. Install Docker using the following command:
    
 ```bash   
 $ sudo apt install docker.io
-'''
+```
 
    3. Install all the dependency packages using the following command:
    
