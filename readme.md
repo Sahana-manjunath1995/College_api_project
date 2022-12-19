@@ -1,4 +1,4 @@
-## COLLEGE DATABASE WITH API
+## Flask-MYSQL college web application
 
    This project aims at creating website for retrieving information regarding students, teachers and library. I have used Flask for creating endpoints and a flask-sqlalchemy library to create table modules and run SQL queries, finally containerizing the application and its deployment in docker. API documentation is done by using swagger.
 
