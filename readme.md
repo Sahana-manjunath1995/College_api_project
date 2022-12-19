@@ -1,6 +1,6 @@
 ## COLLEGE DATABASE WITH API
 
-   This project aims at creating website for retrieving information regarding students, teachers and library.
+   This project aims at creating website for retrieving information regarding students, teachers and library. I have used Flask for creating endpoints and a flask-sqlalchemy library to create table modules and run SQL queries, finally containerizing the application and its deployment in docker. API documentation is done by using swagger.
 
 
 
@@ -48,14 +48,25 @@ $ sudo snap install docker
 $ docker --version
 ```
 
-## Docker command to create and run the container
+## Containerizing the flask application
 
-    1. docker pull mariadb:latest
+   1. Create Dockerfile in app folder
+      - refer : ./app
 
-    2. docker run -d -p 3360:3360 --network mysql-network  -v var/lib/mysql/data:var/lib/mysql/data --name mysqldb --env
-       MARIADB_USER=sahana --env
-       MARIADB_PASSWORD=root --env MARIADB_ROOT_PASSWORD=root  mariadb:latest
+   2. Create requirement.txt file in app folder for listing all the dependencies
+      - refer : ./app
 
+   3. Create docker-compose.yml file in application root directory.
+      - refer : application root directory
+
+   4. Command for building containers
+```bash 
+docker compose up -d --build
+```
+
+   5. Container is created by using Dockerfile
+
+   6. Connection between containers is done using docker-compose.yml
 
 
 ## Login to mysql
@@ -123,37 +134,12 @@ $ pip install -U Flask
 $ pip install -U Flask-SQLAlchemy
 ```
 
-
-
 ## Configuration
 
    - Create config file with the following configuration keys:
 
    1. SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@db:3306/College'
    2. SQLALCHEMY_TRACK_MODIFICATIONS = False
-
-
-
-## Containerizing the flask application
-
-   1. Create Dockerfile in app folder
-      - refer : ./app
-
-   2. Create requirement.txt file in app folder for listing all the dependencies
-      - refer : ./app
-
-   3. Create docker-compose.yml file in application root directory.
-      - refer : application root directory
-
-   4. Command for building containers
-```bash 
-docker compose up -d --build
-```
-
-   5. Container is created by using Dockerfile
-
-   6. Connection between containers is done using docker-compose.yml
-
 
 
 ## API documentation using swagger
@@ -231,7 +217,8 @@ Example:
 
    ![request](https://user-images.githubusercontent.com/115713117/208237350-433d6f23-b899-4296-a633-5dd9a0ca3aec.PNG)
 
-
+## Conclusion
+I found flask-sqlalchemy as one of the easiest library because it is a flask extension that adds support for SQLAlchemy and provides tools and methods to interact with database and Flask applications. Flask is a lightweight web application framework that makes use of python to build simple websites and makes our work much easier. It would be a great choice for beginners to start with flask to learn more about web development. By containerizing the application you will gain more knowledge on how to use docker in your projects. Flask swagger UI helps you to document your AP and interact with the API
 
 ## Extra information
 
