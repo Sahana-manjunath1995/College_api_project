@@ -2,13 +2,15 @@
 
    This project aims at creating website for retrieving information regarding students, teachers and library. I have used Flask for creating endpoints and a flask-sqlalchemy library to create table modules and run SQL queries, finally containerizing the application and its deployment in docker. API documentation is done by using swagger.
 
+## system design for Flask-MYSQL college web application 
+![image](https://user-images.githubusercontent.com/115713117/223188858-96928c72-42a2-4f0f-b444-74e18639c267.png)
 
 
 ## Data model - Schema design for database
 
    - Create schema design, before creating database in Mysql
 
-   ![dbmodel](https://user-images.githubusercontent.com/115713117/208238709-cd6ed3bc-3d62-45e2-ae75-7cc3f07f98bf.PNG)
+ ![dbmodel](https://user-images.githubusercontent.com/115713117/208238709-cd6ed3bc-3d62-45e2-ae75-7cc3f07f98bf.PNG)
 
 
 
